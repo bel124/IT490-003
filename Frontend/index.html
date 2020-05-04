@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="http://3.22.135.143:8080/newsroom">News</a></li> 
+            <li><a href="#">Scores</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="http://3.22.8.175:8080/chatroom?userId=dishantuserid&name=Dishant%20Patel">ChatRoom</a></li>
+            
+        </ul>
+    </nav>
+--------------------------------slide-image-----------------------------
+    
+    <div class="slide-container">
+        
+        <div class="effect slide">
+            <img src="https://cdn.hipwallpaper.com/i/42/52/KGuZjp.jpg"/>
+            
+        </div>
+        
+        <div class="effect slide">
+            <img src="https://cdn.discordapp.com/attachments/671775989478588439/704469322785095710/NBA1.jpg"/>
+            
+        </div>
+        
+        <div class="effect slide">
+            <img src="https://cdn.wallpapersafari.com/86/12/0wsH1y.jpg"/>
+            
+        </div>
+    </div>
+ --------------------------------dots under image------------------------  
+    
+    <div class="dot-container">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+----------------------------------footer----------------------------------
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="footer-main-div">
+        <div class="footer-social-icons">
+           <ul>           
+                    <!-- Add font awesome icons -->
+               <li><a href="https://www.facebook.com/njit.highlanders.5"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://twitter.com/NJIT"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.instagram.com/instanjit/"><i class="fa fa-instagram"></i></a></li>
+               
+            </ul>
+        </div>
+    </div>
+-----------------------------js-for-image-slide------------------------    
+
+    <script>
+    var index=0;
+    show();
+    function show(){
+        var i;
+        var slides= document.getElementsByClassName("slide");
+        var dots=document.getElementsByTagName("span");
+        for (i=0;i<slides.length;i++){
+            slides[i].style.display=" none";
+        }
+        index=index+1;
+        if(index>slides.length){
+            index=1;
+        }
+        
+        for(i=0;i<dots.length;i++){
+            dots[i].className=dots[i].className.replace(" active","");
+        }
+        
+        slides[index-1].style.display="block";
+        dots[index-1].className+=" active";
+        setTimeout(show,1500);
+    }
+    
+    
+</script>
+    
+    
+       
+</body>
+</html>
