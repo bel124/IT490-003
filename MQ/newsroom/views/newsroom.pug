@@ -1,0 +1,94 @@
+include newsroom.html
+
+head
+    title= "NewsRoom"
+
+script.
+    function addNewsArticles() {
+        var articles = "#{articles}"
+        if (articles) {
+            articles = articles.replace(/\\n/g, "\\n")  
+               .replace(/\\'/g, "\\'")
+               .replace(/\\"/g, '\\"')
+               .replace(/\\&/g, "\\&")
+               .replace(/\\r/g, "\\r")
+               .replace(/\\t/g, "\\t")
+               .replace(/\\b/g, "\\b")
+               .replace(/\\f/g, "\\f")
+               .replace('""', '"');
+
+            // remove non-printable and other non-valid JSON chars
+            articles = articles.replace(/[\u0000-\u0019]+/g,""); 
+
+            articles = JSON.parse(articles.replace(/&quot;/g,'"'))
+            articles.forEach((article) => {
+                var divNode = document.createElement("DIV");
+                divNode.className = "card"
+
+                var imgNode = document.createElement("IMG");
+                imgNode.src = article.imageURL
+                imgNode.style = "width:100%"
+
+                var containerNode = document.createElement("DIV");
+                containerNode.className = "container"
+
+                var h4Node = document.createElement("H4");
+                h4Node.innerText = article.source
+
+                var pNode = document.createElement("P");
+                pNode.innerText = article.title
+
+                containerNode.appendChild(h4Node)
+                containerNode.appendChild(pNode)
+
+                var aNode = document.createElement("a");
+                aNode.className = "btn"
+                aNode.innerText = "Open "
+                aNode.style = "width:80%"
+                aNode.href = `${article.articleURL}`
+                aNode.target = "_blank"
+
+                var iNode = document.createElement("i");
+                iNode.className = "fa fa-external-link-square"
+
+                aNode.appendChild(iNode)
+
+                divNode.appendChild(imgNode)
+                divNode.appendChild(containerNode)
+                divNode.appendChild(aNode)
+
+                document.getElementById("news").appendChild(divNode)
+            })
+        }
+    }
+
+    function setPageScroll() {
+        var totalPages = #{totalPages}
+        var currentPage = #{currentPage}
+        var country = "#{country}"
+
+        if (totalPages && currentPage && country) {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (currentPage > 1) {
+                // show previous page button
+                var aNode = document.createElement("a");
+                aNode.href = `/newsroom?country=${country}&p=${currentPage-1}`
+                aNode.class = "previous"
+                aNode.innerText = "Previous"
+
+                document.getElementById("scroll").appendChild(aNode)
+            }
+
+            if (totalPages > currentPage) {
+                // show next page button
+                var aNode = document.createElement("a");
+                aNode.href = `/newsroom?country=${country}&p=${currentPage+1}`
+                aNode.className = "previous"
+                aNode.innerText = "Next"
+                document.getElementById("scroll").appendChild(aNode)
+            }
+        }
+    }
+
+    addNewsArticles();
+    setPageScroll();
