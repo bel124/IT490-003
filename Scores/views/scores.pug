@@ -1,0 +1,54 @@
+include scores.html
+
+head
+    title="Scores"
+
+script.
+    function addScores() {
+        var scorers = "#{results}"
+        if (scorers) {
+            scorers = scorers.replace(/\\n/g, "\\n")  
+               .replace(/\\'/g, "\\'")
+               .replace(/\\"/g, '\\"')
+               .replace(/\\&/g, "\\&")
+               .replace(/\\r/g, "\\r")
+               .replace(/\\t/g, "\\t")
+               .replace(/\\b/g, "\\b")
+               .replace(/\\f/g, "\\f")
+               .replace('""', '"');
+
+            // remove non-printable and other non-valid JSON chars
+            scorers = scorers.replace(/[\u0000-\u0019]+/g,""); 
+
+            scorers = JSON.parse(scorers.replace(/&quot;/g,'"'))
+            scorers.forEach((scorer) => {
+                var divNode = document.createElement("DIV");
+                divNode.className = "card"
+
+                var h4Node = document.createElement("H4");
+                h4Node.innerText = `Summary: ${scorer.summary}`
+
+                var pNode = document.createElement("P");
+                pNode.innerText = `League: ${scorer.league}`
+
+                var pNode1 = document.createElement("P");
+                pNode1.innerText = `Season: ${scorer.season}`
+
+                var pNode2 = document.createElement("P");
+                pNode2.innerText = `Status: ${scorer.status}`
+
+                var pNode3 = document.createElement("P");
+                pNode3.innerText = `Venue: ${scorer.venue}`
+
+                divNode.appendChild(h4Node)
+                divNode.appendChild(pNode)
+                divNode.appendChild(pNode1)
+                divNode.appendChild(pNode2)
+                divNode.appendChild(pNode3)
+
+                document.getElementById("scores").appendChild(divNode)
+            });
+        }
+    }
+
+    addScores();
