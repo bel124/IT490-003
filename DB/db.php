@@ -1,6 +1,6 @@
 <?php
 
-$host="localhost";
+$host="sysint490.mooo.com";
 
 $username="sysint";
 
