@@ -32,8 +32,8 @@ app.get('/newsroom', async (req, res) => {
         p = query.p
     }
 
-
-    newsapi.v2.topHeadlines({
+// Calling newsapi.org to get latest sports news.
+    newsapi.v2.topHeadlines({ 
         category: 'sports',
         language: 'en',
         q: q,
@@ -41,6 +41,7 @@ app.get('/newsroom', async (req, res) => {
         country: country
         }).then(response => {
         if (response.status == "ok") {
+		//we are creating articles objects to pass into pug file
             const articles = response.articles;
             const _articles = []
             for (const article of articles) {
@@ -51,7 +52,7 @@ app.get('/newsroom', async (req, res) => {
                     "source": (article.source.name ? article.source.name : "").replace(/[""]/g, "'")
                 })
             }
-
+// calling pug files with given variables.
             res.render("newsroom", {articles: JSON.stringify(_articles), totalPages: Math.ceil(response.totalResults/20), currentPage: p, country: country, query: q});
         } else {
             res.status(503);
