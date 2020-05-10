@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+div.loginbox
+{
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid white;
+    text-align: center;
+}
+
+div.loginbox h1{
+    margin: 0 0 30px 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+div.loginbox input{
+    width: 80%;
+    margin-bottom: 20px;
+    
+}
+
+div.loginbox input[type=text], input[type=password]{
+    text-align: center;
+}
+
+
+div.createbox{
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid white;
+    text-align: center;
+    color: white;
+}
+
+div.createbox h1{
+    margin: 0 0 30px 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+div.createbox input{
+    width: 80%;
+    margin-bottom: 20px;
+    
+}
+
+div.createbox input[type=text], input[type=password]{
+    text-align: center;
+}
+
+
+body{
+    background-color: #000;
+    
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #1e1f21;
+}
+
+
+ul {
+	margin-left: 60px;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+	float: left;
+    line-height: 100px;
+	
+}
+
+ul li a {
+	text-decoration: none;
+	font-size: 14px;
+	font-family: arial;
+	color: white;
+    padding: 0 20px;	
+}
+
+ul li a:hover {
+	color: red;	
+}
+
+------------------------chat_room-----------------------
+
+.container
+{
+    max-width: 500 !important;
+    margin: auto;
+    margin-top: 4%;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+}
+
+img
+{
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.msg-header
+{
+    border: 1px solid #ccc;
+    width: 60%;
+    height: 10%;
+    border-bottom: none;
+    display: inline-block;
+    background-color: #007bff;
+    margin-top: 4%;
+}
+
+.msg-header-img
+{
+    border-radius: 0%;
+    width: 50px;
+    margin-left: 3%;
+    margin-top: 2%;
+    float: left;
+}
+
+-------------------------slideshow----------------------
+
+.slide-container{
+    position: relative;
+    max-width: 100;
+}
+
+.slide img{
+    width: 90%;
+    height: 600px;
+    border-radius: 0%;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.effect{
+    animation-name: effect;
+    animation-duration: ls;
+}
+
+@keyframes effect{
+    from{
+        opacity: 0.3;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.dot-container{
+    text-align: center;
+    
+    
+}
+
+span{
+    border-radius: 50%;
+    height: 11px;
+    width: 1%;
+    background-color: white;
+    display: inline-block;
+    transition: all 0.6s linear;
+}
+
+.active{
+    background-color: red;
+}
+
+------------------------------footer-and-social----------------------------
+
+
+.footer-main-div{
+    
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background: #272727;
+    padding: 20px 0px;
+}
+
+.footer-social-icons{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.footer-social-icons ul{
+    margin: auto;
+    padding: 0px;
+    text-align: center;
+}
+
+.footer-social-icons ul li{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+    border-radius: 100%;
+    background: green;
+    line-height: 1px;
+    padding: 10px 10px;
+
+}
+
+.footer-social-icons ul li a{
+    color: #272727;
+    font-size: 35px;
+    line-height: 0px;
+    padding: 0px;
+    margin-bottom: 1%;
+    
+}
+
+.footer-social-icons ul li a i{
+    line-height: 40px;
+    
+}
+
+.footer-contener{
+    width: calc(70.6666666667% - 100px);
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.footer-contener h1{
+    font-family: "arial";
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.footer-contener p{
+    font-family: "arial";
+    font-size: 14px;
+    color: white;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

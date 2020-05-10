@@ -1,0 +1,6 @@
+<?php
+session_start();
+require_once('home/IT490-003/MQ/path.inc');
+require_once('home/IT490-003/MQ/get_host_info.inc');
+require_once('home/IT490-003/MQ/rabbitMQLib.inc');
+error_reporting(E_ALL);
