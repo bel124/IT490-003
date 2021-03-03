@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "newsapi": "^2.4.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "talkjs-node": "^0.2.4"
   }
 }
